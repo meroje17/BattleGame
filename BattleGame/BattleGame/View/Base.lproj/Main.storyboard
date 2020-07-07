@@ -226,7 +226,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="v69-pp-C0W">
                                         <rect key="frame" x="0.0" y="0.0" width="280" height="73"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name of third character" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zm7-ae-7Cb">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name of first character" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zm7-ae-7Cb">
                                                 <rect key="frame" x="0.0" y="0.0" width="280" height="34"/>
                                                 <color key="textColor" red="0.24269506339999999" green="0.54443615670000001" blue="0.78545045849999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="15"/>
@@ -245,7 +245,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="uCp-AW-6cL">
                                         <rect key="frame" x="0.0" y="93" width="280" height="73"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name of third character" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ccB-2A-w2j">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name of second character" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ccB-2A-w2j">
                                                 <rect key="frame" x="0.0" y="0.0" width="280" height="34"/>
                                                 <color key="textColor" red="0.24269506339999999" green="0.54443615670000001" blue="0.78545045849999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="15"/>
@@ -293,6 +293,9 @@
                                 <state key="normal" title="LAUNCH BATTLE">
                                     <color key="titleColor" red="0.27221250530000002" green="0.60659444330000001" blue="0.87667983770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="tapLaunchBattleButton" destination="8na-pn-s82" eventType="touchUpInside" id="0Ej-hP-7Us"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.49330145120000002" green="0.73698854449999995" blue="0.79622775320000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -318,6 +321,14 @@
                     </view>
                     <navigationItem key="navigationItem" id="HH8-3u-rJx"/>
                     <connections>
+                        <outlet property="chooseYourTeamLabel" destination="0iE-p8-g8h" id="FHI-uv-jba"/>
+                        <outlet property="launchBattleButton" destination="Or3-ep-w74" id="twS-nJ-L1d"/>
+                        <outletCollection property="namesTextField" destination="zm7-ae-7Cb" collectionClass="NSMutableArray" id="3Lg-Mx-csa"/>
+                        <outletCollection property="namesTextField" destination="ccB-2A-w2j" collectionClass="NSMutableArray" id="YgK-91-JlX"/>
+                        <outletCollection property="namesTextField" destination="9Tr-60-QU8" collectionClass="NSMutableArray" id="CrS-PD-MXS"/>
+                        <outletCollection property="racesSegmentedControl" destination="6ts-hl-5tb" collectionClass="NSMutableArray" id="AJc-Vk-Hp2"/>
+                        <outletCollection property="racesSegmentedControl" destination="gYL-Rb-ouY" collectionClass="NSMutableArray" id="ipm-ZM-pk7"/>
+                        <outletCollection property="racesSegmentedControl" destination="DIs-ay-mw5" collectionClass="NSMutableArray" id="HMA-LP-XqE"/>
                         <segue destination="vgM-ct-Euv" kind="show" identifier="tapLaunchBattleButton" id="O3q-xt-3ph"/>
                     </connections>
                 </viewController>
