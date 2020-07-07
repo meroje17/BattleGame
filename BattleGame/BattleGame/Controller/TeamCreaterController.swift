@@ -22,7 +22,7 @@ final class TeamCreaterController: UIViewController {
         if emptyTextVerification() {
             createTeam {
                 if playerIndex == 0 {
-                    chooseYourTeamLabel.text = "Player 2 choose your team !"
+                    chooseYourTeamLabel.text = "\(Player.list[1].name) choose your team !"
                     resetUI()
                     playerIndex += 1
                 } else {
@@ -40,6 +40,8 @@ final class TeamCreaterController: UIViewController {
     
     private func initializer() {
         launchBattleButton.layer.cornerRadius = launchBattleButton.bounds.height / 2
+        
+        chooseYourTeamLabel.text = "\(Player.list[0].name) choose your team !"
         
         for name in namesTextField {
             name.delegate = self
