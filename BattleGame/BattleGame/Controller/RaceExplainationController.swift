@@ -8,23 +8,17 @@
 
 import UIKit
 
-class RaceExplainationController: UIViewController {
+final class RaceExplainationController: UIViewController {
 
+    @IBOutlet private weak var createTeamButton: UIButton!
+    
+    private func initUI() {
+        createTeamButton.layer.cornerRadius = createTeamButton.bounds.height / 2
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        initUI()
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
