@@ -30,6 +30,9 @@ final class HomeController: UIViewController {
     private func initializer() {
         goButton.layer.cornerRadius = goButton.bounds.height / 2
         
+        nameFirstPlayerTextField.delegate = self
+        nameSecondPlayerTextField.delegate = self
+        
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(textFielReturning)))
     }
     
