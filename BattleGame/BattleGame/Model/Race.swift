@@ -25,7 +25,7 @@ final class Ork: Character {
 
 final class Knight: Character {
     var name: String
-    var lifePoint = 12
+    var lifePoint = 10
     var heal = false
     var weapon = Weapon.list[1] {
         didSet {
@@ -40,7 +40,7 @@ final class Knight: Character {
 
 final class Wizard: Character {
     var name: String
-    var lifePoint = 10
+    var lifePoint = 12
     var heal = true
     var weapon = Weapon.list[2] {
         didSet {
