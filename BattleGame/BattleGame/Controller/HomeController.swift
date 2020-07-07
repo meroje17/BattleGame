@@ -8,23 +8,51 @@
 
 import UIKit
 
-class HomeController: UIViewController {
+final class HomeController: UIViewController {
 
+    @IBOutlet private weak var nameFirstPlayerTextField: UITextField!
+    @IBOutlet private weak var nameSecondPlayerTextField: UITextField!
+    @IBOutlet private weak var goButton: UIButton!
+    
+    typealias completion = () -> ()
+    
+    @IBAction private func tapGoButton() {
+        emptyTextVerification {
+            performSegue(withIdentifier: "tapGoButton", sender: nil)
+        }
+    }
+    
+    @objc func textFielReturning() {
+        nameFirstPlayerTextField.resignFirstResponder()
+        nameSecondPlayerTextField.resignFirstResponder()
+    }
+    
+    private func initializer() {
+        goButton.layer.cornerRadius = goButton.bounds.height / 2
+        
+        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(textFielReturning)))
+    }
+    
+    private func emptyTextVerification(_ completion: completion) {
+        if nameFirstPlayerTextField.text == "" { error(with: .textEmpty, shake: goButton); return }
+        if nameSecondPlayerTextField.text == "" { error(with: .textEmpty, shake: goButton); return }
+        guard let playerOne = nameFirstPlayerTextField.text else { error(with: .textEmpty, shake: goButton); return }
+        guard let playerTwo = nameSecondPlayerTextField.text else { error(with: .textEmpty, shake: goButton); return }
+        let players = [Player(name: playerOne), Player(name: playerTwo)]
+        Player.list = players
+        completion()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        initializer()
     }
-    
+}
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+extension HomeController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textFielReturning()
+        return true
     }
-    */
-
 }

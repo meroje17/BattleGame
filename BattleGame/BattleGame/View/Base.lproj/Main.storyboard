@@ -35,6 +35,9 @@
                                 <state key="normal" title="GO !">
                                     <color key="titleColor" red="0.27221250530000002" green="0.60659444330000001" blue="0.87667983770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="tapGoButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="x0h-P2-yoy"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Fc5-Io-ljs">
                                 <rect key="frame" x="20" y="164" width="280" height="240"/>
@@ -87,6 +90,9 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="goButton" destination="Xv7-Fg-nyr" id="NmC-AV-4dm"/>
+                        <outlet property="nameFirstPlayerTextField" destination="Jgd-bw-VXM" id="aXc-mB-QNO"/>
+                        <outlet property="nameSecondPlayerTextField" destination="x28-Ah-Ey1" id="efa-Td-6H3"/>
                         <segue destination="ng0-DK-NDB" kind="show" identifier="tapGoButton" id="BZ7-n6-QGq"/>
                     </connections>
                 </viewController>

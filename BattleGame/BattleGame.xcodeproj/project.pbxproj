@@ -16,6 +16,7 @@
 		024F699524B48047009B2A5E /* RaceExplainationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024F699424B48047009B2A5E /* RaceExplainationController.swift */; };
 		024F699724B48058009B2A5E /* TeamCreaterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024F699624B48058009B2A5E /* TeamCreaterController.swift */; };
 		024F699924B48065009B2A5E /* BattleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024F699824B48065009B2A5E /* BattleController.swift */; };
+		024F699B24B48362009B2A5E /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024F699A24B48362009B2A5E /* Error.swift */; };
 		02D7378224AF813C00F5A175 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D7378124AF813C00F5A175 /* AppDelegate.swift */; };
 		02D7378424AF813C00F5A175 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D7378324AF813C00F5A175 /* SceneDelegate.swift */; };
 		02D7378924AF813C00F5A175 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02D7378724AF813C00F5A175 /* Main.storyboard */; };
@@ -44,6 +45,7 @@
 		024F699424B48047009B2A5E /* RaceExplainationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceExplainationController.swift; sourceTree = "<group>"; };
 		024F699624B48058009B2A5E /* TeamCreaterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamCreaterController.swift; sourceTree = "<group>"; };
 		024F699824B48065009B2A5E /* BattleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleController.swift; sourceTree = "<group>"; };
+		024F699A24B48362009B2A5E /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		02D7377E24AF813C00F5A175 /* BattleGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BattleGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02D7378124AF813C00F5A175 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		02D7378324AF813C00F5A175 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				02D7378A24AF814100F5A175 /* Assets.xcassets */,
 				02D7378324AF813C00F5A175 /* SceneDelegate.swift */,
 				02D7378124AF813C00F5A175 /* AppDelegate.swift */,
+				024F699A24B48362009B2A5E /* Error.swift */,
 			);
 			path = Ressources;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 				024F699724B48058009B2A5E /* TeamCreaterController.swift in Sources */,
 				024F699524B48047009B2A5E /* RaceExplainationController.swift in Sources */,
 				02D7378424AF813C00F5A175 /* SceneDelegate.swift in Sources */,
+				024F699B24B48362009B2A5E /* Error.swift in Sources */,
 				024F699924B48065009B2A5E /* BattleController.swift in Sources */,
 				024F698724B46E33009B2A5E /* Weapon.swift in Sources */,
 				024F698F24B47362009B2A5E /* Character.swift in Sources */,
