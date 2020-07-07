@@ -12,6 +12,10 @@
 		024F698D24B4733E009B2A5E /* Chest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024F698C24B4733E009B2A5E /* Chest.swift */; };
 		024F698F24B47362009B2A5E /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024F698E24B47362009B2A5E /* Character.swift */; };
 		024F699124B47BBA009B2A5E /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024F699024B47BBA009B2A5E /* Player.swift */; };
+		024F699324B4802E009B2A5E /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024F699224B4802E009B2A5E /* HomeController.swift */; };
+		024F699524B48047009B2A5E /* RaceExplainationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024F699424B48047009B2A5E /* RaceExplainationController.swift */; };
+		024F699724B48058009B2A5E /* TeamCreaterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024F699624B48058009B2A5E /* TeamCreaterController.swift */; };
+		024F699924B48065009B2A5E /* BattleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024F699824B48065009B2A5E /* BattleController.swift */; };
 		02D7378224AF813C00F5A175 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D7378124AF813C00F5A175 /* AppDelegate.swift */; };
 		02D7378424AF813C00F5A175 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D7378324AF813C00F5A175 /* SceneDelegate.swift */; };
 		02D7378924AF813C00F5A175 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02D7378724AF813C00F5A175 /* Main.storyboard */; };
@@ -36,6 +40,10 @@
 		024F698C24B4733E009B2A5E /* Chest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chest.swift; sourceTree = "<group>"; };
 		024F698E24B47362009B2A5E /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		024F699024B47BBA009B2A5E /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		024F699224B4802E009B2A5E /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		024F699424B48047009B2A5E /* RaceExplainationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceExplainationController.swift; sourceTree = "<group>"; };
+		024F699624B48058009B2A5E /* TeamCreaterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamCreaterController.swift; sourceTree = "<group>"; };
+		024F699824B48065009B2A5E /* BattleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleController.swift; sourceTree = "<group>"; };
 		02D7377E24AF813C00F5A175 /* BattleGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BattleGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02D7378124AF813C00F5A175 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		02D7378324AF813C00F5A175 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -117,6 +125,10 @@
 		02D737A424AF816200F5A175 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				024F699224B4802E009B2A5E /* HomeController.swift */,
+				024F699424B48047009B2A5E /* RaceExplainationController.swift */,
+				024F699624B48058009B2A5E /* TeamCreaterController.swift */,
+				024F699824B48065009B2A5E /* BattleController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -245,9 +257,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				02D7378224AF813C00F5A175 /* AppDelegate.swift in Sources */,
+				024F699724B48058009B2A5E /* TeamCreaterController.swift in Sources */,
+				024F699524B48047009B2A5E /* RaceExplainationController.swift in Sources */,
 				02D7378424AF813C00F5A175 /* SceneDelegate.swift in Sources */,
+				024F699924B48065009B2A5E /* BattleController.swift in Sources */,
 				024F698724B46E33009B2A5E /* Weapon.swift in Sources */,
 				024F698F24B47362009B2A5E /* Character.swift in Sources */,
+				024F699324B4802E009B2A5E /* HomeController.swift in Sources */,
 				024F699124B47BBA009B2A5E /* Player.swift in Sources */,
 				024F698B24B46F50009B2A5E /* Race.swift in Sources */,
 				024F698D24B4733E009B2A5E /* Chest.swift in Sources */,
