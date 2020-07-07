@@ -17,12 +17,15 @@
 		024F699724B48058009B2A5E /* TeamCreaterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024F699624B48058009B2A5E /* TeamCreaterController.swift */; };
 		024F699924B48065009B2A5E /* BattleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024F699824B48065009B2A5E /* BattleController.swift */; };
 		024F699B24B48362009B2A5E /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024F699A24B48362009B2A5E /* Error.swift */; };
+		024F699D24B4B8D2009B2A5E /* PlayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024F699C24B4B8D2009B2A5E /* PlayerTests.swift */; };
+		024F699F24B4BBD2009B2A5E /* ChestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024F699E24B4BBD2009B2A5E /* ChestTests.swift */; };
+		024F69A124B4BD16009B2A5E /* RaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024F69A024B4BD16009B2A5E /* RaceTests.swift */; };
+		024F69A324B4BEE4009B2A5E /* CharacterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024F69A224B4BEE4009B2A5E /* CharacterTests.swift */; };
 		02D7378224AF813C00F5A175 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D7378124AF813C00F5A175 /* AppDelegate.swift */; };
 		02D7378424AF813C00F5A175 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D7378324AF813C00F5A175 /* SceneDelegate.swift */; };
 		02D7378924AF813C00F5A175 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02D7378724AF813C00F5A175 /* Main.storyboard */; };
 		02D7378B24AF814100F5A175 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02D7378A24AF814100F5A175 /* Assets.xcassets */; };
 		02D7378E24AF814100F5A175 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02D7378C24AF814100F5A175 /* LaunchScreen.storyboard */; };
-		02D7379924AF814200F5A175 /* BattleGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D7379824AF814200F5A175 /* BattleGameTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +49,10 @@
 		024F699624B48058009B2A5E /* TeamCreaterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamCreaterController.swift; sourceTree = "<group>"; };
 		024F699824B48065009B2A5E /* BattleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleController.swift; sourceTree = "<group>"; };
 		024F699A24B48362009B2A5E /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		024F699C24B4B8D2009B2A5E /* PlayerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTests.swift; sourceTree = "<group>"; };
+		024F699E24B4BBD2009B2A5E /* ChestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChestTests.swift; sourceTree = "<group>"; };
+		024F69A024B4BD16009B2A5E /* RaceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceTests.swift; sourceTree = "<group>"; };
+		024F69A224B4BEE4009B2A5E /* CharacterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterTests.swift; sourceTree = "<group>"; };
 		02D7377E24AF813C00F5A175 /* BattleGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BattleGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02D7378124AF813C00F5A175 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		02D7378324AF813C00F5A175 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -54,7 +61,6 @@
 		02D7378D24AF814100F5A175 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		02D7378F24AF814100F5A175 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		02D7379424AF814200F5A175 /* BattleGameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BattleGameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		02D7379824AF814200F5A175 /* BattleGameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleGameTests.swift; sourceTree = "<group>"; };
 		02D7379A24AF814200F5A175 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -109,8 +115,11 @@
 		02D7379724AF814200F5A175 /* BattleGameTests */ = {
 			isa = PBXGroup;
 			children = (
-				02D7379824AF814200F5A175 /* BattleGameTests.swift */,
 				02D7379A24AF814200F5A175 /* Info.plist */,
+				024F699C24B4B8D2009B2A5E /* PlayerTests.swift */,
+				024F699E24B4BBD2009B2A5E /* ChestTests.swift */,
+				024F69A024B4BD16009B2A5E /* RaceTests.swift */,
+				024F69A224B4BEE4009B2A5E /* CharacterTests.swift */,
 			);
 			path = BattleGameTests;
 			sourceTree = "<group>";
@@ -278,7 +287,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				02D7379924AF814200F5A175 /* BattleGameTests.swift in Sources */,
+				024F699D24B4B8D2009B2A5E /* PlayerTests.swift in Sources */,
+				024F699F24B4BBD2009B2A5E /* ChestTests.swift in Sources */,
+				024F69A124B4BD16009B2A5E /* RaceTests.swift in Sources */,
+				024F69A324B4BEE4009B2A5E /* CharacterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

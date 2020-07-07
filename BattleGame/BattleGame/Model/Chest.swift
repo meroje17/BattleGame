@@ -9,9 +9,9 @@
 import Foundation
 
 final class Chest {
-    func openToGetWeapon() -> Weapon? {
-        let randomTurn = Int.random(in: 0...10)
-        
+    var randomTurn = Int.random(in: 0...10)
+    
+    func openToGetWeapon() -> Weapon? {        
         if randomTurn <= 1 {
             let randomWeapon = Weapon.list.randomElement()
             if let weapon = randomWeapon {
