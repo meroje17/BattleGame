@@ -10,6 +10,7 @@ import Foundation
 
 protocol Character {
     var name: String { get set }
+    var image: String { get set }
     var lifePoint: Int { get set }
     var heal: Bool { get set }
     var weapon: Weapon { get set }

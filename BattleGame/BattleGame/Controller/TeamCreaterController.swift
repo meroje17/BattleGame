@@ -18,7 +18,7 @@ final class TeamCreaterController: UIViewController {
     typealias completion = () -> ()
     private var playerIndex = 0
     
-    @IBAction func tapLaunchBattleButton() {
+    @IBAction private func tapLaunchBattleButton() {
         if emptyTextVerification() {
             createTeam {
                 if playerIndex == 0 {
