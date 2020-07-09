@@ -8,16 +8,26 @@
 
 import Foundation
 
-final class Chest {
-    var randomTurn = Int.random(in: 0...10)
+protocol Random {
+    var randomTurn: Int! { get set }
+    func openToGetWeapon() -> Weapon?
+    func randomInt() -> Int
+}
+
+final class Chest: Random {
+    var randomTurn: Int!
     
     func openToGetWeapon() -> Weapon? {        
-        if randomTurn <= 1 {
+        if randomTurn <= 2 {
             let randomWeapon = Weapon.list.randomElement()
             if let weapon = randomWeapon {
                 return weapon
             }
         }
         return nil
+    }
+    
+    func randomInt() -> Int {
+        return Int.random(in: 0...10)
     }
 }

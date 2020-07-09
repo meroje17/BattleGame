@@ -615,32 +615,46 @@
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mmj-C1-2Yp">
                                 <rect key="frame" x="35" y="159" width="250" height="250"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="gun" translatesAutoresizingMaskIntoConstraints="NO" id="Gl4-M3-0Ah">
-                                        <rect key="frame" x="0.0" y="0.0" width="250" height="125"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="125" id="Khq-LF-bkq"/>
-                                        </constraints>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The character Hubert of Player 1 find a GUN." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RcQ-iu-bag">
-                                        <rect key="frame" x="20" y="105" width="210" height="125"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="125" id="jid-Bg-coI"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="20"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="UHw-VL-eBq">
+                                        <rect key="frame" x="5" y="5" width="240" height="240"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="gun" translatesAutoresizingMaskIntoConstraints="NO" id="QzM-OY-hrb">
+                                                <rect key="frame" x="0.0" y="0.0" width="240" height="80"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="80" id="iWH-1T-Wav"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Character of Player find a gun (1 damage, 0 heal)." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y2h-vD-2tg">
+                                                <rect key="frame" x="0.0" y="85" width="240" height="100"/>
+                                                <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WcA-6o-79I">
+                                                <rect key="frame" x="0.0" y="190" width="240" height="50"/>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="WNV-Pr-j2W"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="20"/>
+                                                <state key="normal" title="OK">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="tapChestButton" destination="vgM-ct-Euv" eventType="touchUpInside" id="78g-Cl-Ict"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="Gl4-M3-0Ah" firstAttribute="top" secondItem="Mmj-C1-2Yp" secondAttribute="top" id="4cP-0D-xrW"/>
+                                    <constraint firstItem="UHw-VL-eBq" firstAttribute="top" secondItem="Mmj-C1-2Yp" secondAttribute="top" constant="5" id="3eK-gz-amn"/>
                                     <constraint firstAttribute="width" constant="250" id="CE6-Vn-leh"/>
-                                    <constraint firstItem="Gl4-M3-0Ah" firstAttribute="leading" secondItem="Mmj-C1-2Yp" secondAttribute="leading" id="Qej-Nl-ABw"/>
-                                    <constraint firstAttribute="trailing" secondItem="RcQ-iu-bag" secondAttribute="trailing" constant="20" id="YYJ-Zu-LFM"/>
-                                    <constraint firstItem="RcQ-iu-bag" firstAttribute="leading" secondItem="Mmj-C1-2Yp" secondAttribute="leading" constant="20" id="mFB-vn-Ef1"/>
                                     <constraint firstAttribute="height" constant="250" id="moD-Po-tmV"/>
-                                    <constraint firstAttribute="trailing" secondItem="Gl4-M3-0Ah" secondAttribute="trailing" id="pYj-AY-rgf"/>
-                                    <constraint firstAttribute="bottom" secondItem="RcQ-iu-bag" secondAttribute="bottom" constant="20" id="u2P-Tm-CDc"/>
+                                    <constraint firstItem="UHw-VL-eBq" firstAttribute="leading" secondItem="Mmj-C1-2Yp" secondAttribute="leading" constant="5" id="osL-oR-GXl"/>
+                                    <constraint firstAttribute="trailing" secondItem="UHw-VL-eBq" secondAttribute="trailing" constant="5" id="qxB-c3-ZTP"/>
+                                    <constraint firstAttribute="bottom" secondItem="UHw-VL-eBq" secondAttribute="bottom" constant="5" id="yil-z7-pEW"/>
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="K2v-m6-w12">
@@ -760,11 +774,12 @@
                         <outlet property="attackButton" destination="xoX-ab-hYN" id="abn-w4-pa4"/>
                         <outlet property="attackOrHealButtonsStackView" destination="K2v-m6-w12" id="4Xc-D1-5uB"/>
                         <outlet property="charactersButtonStackView" destination="bHh-fV-GnZ" id="di9-tE-bQT"/>
-                        <outlet property="chestLabel" destination="RcQ-iu-bag" id="NIg-c6-1jz"/>
+                        <outlet property="chestButton" destination="WcA-6o-79I" id="uIY-PI-Osu"/>
+                        <outlet property="chestLabel" destination="Y2h-vD-2tg" id="tUc-Jl-52u"/>
                         <outlet property="chestView" destination="Mmj-C1-2Yp" id="Gpw-EW-HvP"/>
-                        <outlet property="gunImageView" destination="Gl4-M3-0Ah" id="1Qr-6B-YnZ"/>
                         <outlet property="healButton" destination="PEO-AG-haV" id="qec-bX-1mM"/>
                         <outlet property="playerTurnLabel" destination="yMR-FL-J4N" id="mKm-r0-jGw"/>
+                        <outlet property="weaponImageView" destination="QzM-OY-hrb" id="cEK-Qu-Fd7"/>
                         <outletCollection property="namesOfPlayer" destination="dZZ-Ej-QuH" collectionClass="NSMutableArray" id="10k-PD-y1n"/>
                         <outletCollection property="namesOfPlayer" destination="6rJ-jS-C7y" collectionClass="NSMutableArray" id="dmN-ca-cKM"/>
                         <outletCollection property="charactersImageView" destination="VQK-Zl-TIN" collectionClass="NSMutableArray" id="Pdp-nI-5oT"/>

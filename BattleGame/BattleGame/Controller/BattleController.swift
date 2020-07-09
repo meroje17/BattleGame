@@ -26,8 +26,9 @@ final class BattleController: UIViewController {
     @IBOutlet private var charactersLifePointsLabel: [UILabel]!
     
     @IBOutlet private weak var chestView: UIView!
+    @IBOutlet private weak var weaponImageView: UIImageView!
     @IBOutlet private weak var chestLabel: UILabel!
-    @IBOutlet private weak var gunImageView: UIImageView!
+    @IBOutlet private weak var chestButton: UIButton!
     
     @IBOutlet private weak var playerTurnLabel: UILabel!
     @IBOutlet private weak var attackButton: UIButton!
@@ -42,8 +43,9 @@ final class BattleController: UIViewController {
     private var choosenAction: actionPossible!
     private var characterCanHeal = false
     private var nameOfVictoryPlayer: String!
+    private var chest: Chest = Chest()
     
-    @IBAction func tapCharacterOneButton() {
+    @IBAction private func tapCharacterOneButton() {
         if actionInterruptor {
             switch choosenAction {
             case .attack:
@@ -61,7 +63,7 @@ final class BattleController: UIViewController {
         }
     }
     
-    @IBAction func tapCharacterTwoButton() {
+    @IBAction private func tapCharacterTwoButton() {
         if actionInterruptor {
             switch choosenAction {
             case .attack:
@@ -79,7 +81,7 @@ final class BattleController: UIViewController {
         }
     }
     
-    @IBAction func tapCharacterThreeButton() {
+    @IBAction private func tapCharacterThreeButton() {
         if actionInterruptor {
             switch choosenAction {
             case .attack:
@@ -97,18 +99,22 @@ final class BattleController: UIViewController {
         }
     }
     
-    @IBAction func tapAttackButton() {
+    @IBAction private func tapAttackButton() {
         actionInterruptor = true
         choosenAction = .attack
         updatePlayerTurnLabel(withAction: .chooseTarget)
         hideActionStackView(true)
     }
     
-    @IBAction func tapHealButton() {
+    @IBAction private func tapHealButton() {
         actionInterruptor = true
         choosenAction = .heal
         updatePlayerTurnLabel(withAction: .chooseTarget)
         hideActionStackView(true)
+    }
+    
+    @IBAction func tapChestButton() {
+        chestView.isHidden = true
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -135,6 +141,7 @@ final class BattleController: UIViewController {
         refreshCharactersLifePointsLabel()
         actionInterruptor = false
         turn += 1
+        isTheChestOpen()
         updatePlayerTurnLabel(withAction: .chooseAttacker)
         hideActionStackView(true)
     }
@@ -144,6 +151,7 @@ final class BattleController: UIViewController {
         refreshCharactersLifePointsLabel()
         actionInterruptor = false
         turn += 1
+        isTheChestOpen()
         updatePlayerTurnLabel(withAction: .chooseAttacker)
         hideActionStackView(true)
     }
@@ -180,6 +188,16 @@ final class BattleController: UIViewController {
         }
         attackOrHealButtonsStackView.isHidden = bool
         charactersButtonStackView.isHidden = !bool
+    }
+    
+    private func isTheChestOpen() {
+        guard let weapon = chest.openToGetWeapon() else { return }
+        let playerIndexRandom = Int.random(in: 0...1)
+        let characterIndexRandom = Int.random(in: 0...2)
+        Player.list[playerIndexRandom].characters[characterIndexRandom].weapon = weapon
+        chestView.isHidden = false
+        weaponImageView.image = UIImage(named: "\(weapon.nameOfWeapon)")
+        chestLabel.text = "\(Player.list[playerIndexRandom].characters[characterIndexRandom].name) of \(Player.list[playerIndexRandom].name) find a \(weapon.nameOfWeapon) (\(weapon.damagePoint) damage, \(weapon.healPoint) heal)."
     }
     
     private func initNamesOfPlayer() {
@@ -240,6 +258,14 @@ final class BattleController: UIViewController {
         initCharactersImageView()
         initCharactersNamesLabel()
         refreshCharactersLifePointsLabel()
+        
+        chestButton.layer.cornerRadius = chestButton.bounds.height / 2
+        chestView.layer.cornerRadius = 10
+        for button in charactersButton {
+            button.layer.cornerRadius = 10
+        }
+        attackButton.layer.cornerRadius = 10
+        healButton.layer.cornerRadius = 10
         
         attackOrHealButtonsStackView.isHidden = true
         updatePlayerTurnLabel(withAction: .chooseAttacker)

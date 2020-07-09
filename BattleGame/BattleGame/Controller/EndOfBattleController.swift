@@ -21,6 +21,8 @@ final class EndOfBattleController: UIViewController {
     
     private func initializer() {
         homeButton.layer.cornerRadius = homeButton.bounds.height / 2
+        homeButton.layer.borderWidth = 2
+        homeButton.layer.borderColor = UIColor.yellow.cgColor
         
         guard let name = nameOfWinner else { return }
         playerWinnerLabel.text = "\(name), you are the winner ! Congratulations !"
