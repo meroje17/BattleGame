@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		024EAB1E24B721780093309E /* EndOfBattleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024EAB1D24B721780093309E /* EndOfBattleController.swift */; };
 		024F698724B46E33009B2A5E /* Weapon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024F698624B46E33009B2A5E /* Weapon.swift */; };
 		024F698B24B46F50009B2A5E /* Race.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024F698A24B46F50009B2A5E /* Race.swift */; };
 		024F698D24B4733E009B2A5E /* Chest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024F698C24B4733E009B2A5E /* Chest.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		024EAB1D24B721780093309E /* EndOfBattleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndOfBattleController.swift; sourceTree = "<group>"; };
 		024F698624B46E33009B2A5E /* Weapon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weapon.swift; sourceTree = "<group>"; };
 		024F698A24B46F50009B2A5E /* Race.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Race.swift; sourceTree = "<group>"; };
 		024F698C24B4733E009B2A5E /* Chest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chest.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 				024F699424B48047009B2A5E /* RaceExplainationController.swift */,
 				024F699624B48058009B2A5E /* TeamCreaterController.swift */,
 				024F699824B48065009B2A5E /* BattleController.swift */,
+				024EAB1D24B721780093309E /* EndOfBattleController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 			files = (
 				02D7378224AF813C00F5A175 /* AppDelegate.swift in Sources */,
 				024F699724B48058009B2A5E /* TeamCreaterController.swift in Sources */,
+				024EAB1E24B721780093309E /* EndOfBattleController.swift in Sources */,
 				024F699524B48047009B2A5E /* RaceExplainationController.swift in Sources */,
 				02D7378424AF813C00F5A175 /* SceneDelegate.swift in Sources */,
 				024F699B24B48362009B2A5E /* Error.swift in Sources */,

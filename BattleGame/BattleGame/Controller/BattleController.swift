@@ -41,6 +41,7 @@ final class BattleController: UIViewController {
     private var actionInterruptor = false
     private var choosenAction: actionPossible!
     private var characterCanHeal = false
+    private var nameOfVictoryPlayer: String!
     
     @IBAction func tapCharacterOneButton() {
         if actionInterruptor {
@@ -110,10 +111,20 @@ final class BattleController: UIViewController {
         hideActionStackView(true)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "endOfBattle" {
+            let controller = segue.destination as! EndOfBattleController
+            controller.nameOfWinner = nameOfVictoryPlayer
+        }
+    }
+    
     private func fight(with attacker: Character, andTarget number: Int) {
         let indexPlayer = (turn + 1) % 2
         Player.list[indexPlayer].characters[number].lifePoint -= attacker.weapon.damagePoint
-        // VERIF FIN DE PARTIE
+        if endOfBattleVerification() {
+            performSegue(withIdentifier: "endOfBattle", sender: nil)
+            return
+        }
         if Player.list[indexPlayer].characters[number].lifePoint <= 0 {
             if indexPlayer == 0 {
                 charactersImageView[number].image = UIImage(named: "dead")
@@ -135,6 +146,21 @@ final class BattleController: UIViewController {
         turn += 1
         updatePlayerTurnLabel(withAction: .chooseAttacker)
         hideActionStackView(true)
+    }
+    
+    private func endOfBattleVerification() -> Bool {
+        var index = 0
+        var numberOfDeadCharacter = 0
+        for character in Player.list[(turn + 1) % 2].characters {
+            if character.lifePoint <= 0 { numberOfDeadCharacter += 1 }
+            index += 1
+        }
+        if numberOfDeadCharacter == 3 {
+            nameOfVictoryPlayer = Player.list[turn % 2].name
+            return true
+        } else {
+            return false
+        }
     }
     
     private func hideActionStackView(_ bool: Bool) {

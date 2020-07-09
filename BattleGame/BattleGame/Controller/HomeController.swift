@@ -36,6 +36,11 @@ final class HomeController: UIViewController {
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(textFielReturning)))
     }
     
+    @IBAction func prepareForUnwind(segue: UIStoryboardSegue) {
+        nameFirstPlayerTextField.text = nil
+        nameSecondPlayerTextField.text = nil
+    }
+    
     private func emptyTextVerification(_ completion: completion) {
         if nameFirstPlayerTextField.text == "" { error(with: .textEmpty, shake: goButton); return }
         if nameSecondPlayerTextField.text == "" { error(with: .textEmpty, shake: goButton); return }

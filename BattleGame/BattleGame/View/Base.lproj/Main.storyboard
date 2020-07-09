@@ -788,15 +788,87 @@
                         <outletCollection property="charactersLifePointsLabel" destination="Z1P-lg-kgA" collectionClass="NSMutableArray" id="pC7-m7-4l4"/>
                         <outletCollection property="charactersLifePointsLabel" destination="tri-It-1HK" collectionClass="NSMutableArray" id="MV3-0k-Zr0"/>
                         <outletCollection property="charactersLifePointsLabel" destination="65h-Te-xYU" collectionClass="NSMutableArray" id="K3g-RE-Ins"/>
+                        <segue destination="wcD-hp-i3D" kind="show" identifier="endOfBattle" id="iI0-Pu-pOU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eDH-lD-SaH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1880.625" y="130.98591549295776"/>
         </scene>
+        <!--End Of Battle Controller-->
+        <scene sceneID="YlL-Gy-Xgw">
+            <objects>
+                <viewController modalTransitionStyle="flipHorizontal" modalPresentationStyle="fullScreen" id="wcD-hp-i3D" customClass="EndOfBattleController" customModule="BattleGame" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0P5-6L-3B8">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.20000000000000001" contentMode="scaleAspectFill" image="wallpaper" translatesAutoresizingMaskIntoConstraints="NO" id="595-up-zT1">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="crowned" translatesAutoresizingMaskIntoConstraints="NO" id="J1i-1Y-rWD">
+                                <rect key="frame" x="100" y="100" width="120" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="YoE-Ge-tM0"/>
+                                    <constraint firstAttribute="width" constant="120" id="p01-of-atM"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player, you are the winner !" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sfE-8B-mNB">
+                                <rect key="frame" x="20" y="209" width="280" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="w90-M8-Sje"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="30"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3co-tx-VjT">
+                                <rect key="frame" x="130" y="488" width="60" height="60"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="EIs-hk-Wid"/>
+                                    <constraint firstAttribute="height" constant="60" id="H2r-m2-8HI"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="house.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="tapHomeButton" destination="wcD-hp-i3D" eventType="touchUpInside" id="Lzg-E6-mFo"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.49330145120000002" green="0.73698854449999995" blue="0.79622775320000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="sfE-8B-mNB" firstAttribute="centerY" secondItem="0P5-6L-3B8" secondAttribute="centerY" id="5Uu-Ds-aCb"/>
+                            <constraint firstItem="OVi-ER-rc4" firstAttribute="trailing" secondItem="595-up-zT1" secondAttribute="trailing" id="87V-zh-Ot2"/>
+                            <constraint firstItem="595-up-zT1" firstAttribute="leading" secondItem="OVi-ER-rc4" secondAttribute="leading" id="8Wy-yG-LSV"/>
+                            <constraint firstItem="OVi-ER-rc4" firstAttribute="bottom" secondItem="3co-tx-VjT" secondAttribute="bottom" constant="20" id="Cjk-8j-rtb"/>
+                            <constraint firstItem="OVi-ER-rc4" firstAttribute="trailing" secondItem="sfE-8B-mNB" secondAttribute="trailing" constant="20" id="Im5-sx-B2f"/>
+                            <constraint firstItem="595-up-zT1" firstAttribute="top" secondItem="OVi-ER-rc4" secondAttribute="top" id="Ojs-Q3-ZPT"/>
+                            <constraint firstItem="OVi-ER-rc4" firstAttribute="bottom" secondItem="595-up-zT1" secondAttribute="bottom" id="ZNV-zJ-Pxc"/>
+                            <constraint firstItem="J1i-1Y-rWD" firstAttribute="centerX" secondItem="0P5-6L-3B8" secondAttribute="centerX" id="Zwb-0u-Dpb"/>
+                            <constraint firstItem="sfE-8B-mNB" firstAttribute="leading" secondItem="OVi-ER-rc4" secondAttribute="leading" constant="20" id="eRq-24-1Yz"/>
+                            <constraint firstItem="3co-tx-VjT" firstAttribute="centerX" secondItem="0P5-6L-3B8" secondAttribute="centerX" id="tak-xj-kvX"/>
+                            <constraint firstItem="J1i-1Y-rWD" firstAttribute="top" secondItem="OVi-ER-rc4" secondAttribute="top" constant="100" id="yWc-TK-rAx"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="OVi-ER-rc4"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="5fx-e9-f9v"/>
+                    <connections>
+                        <outlet property="homeButton" destination="3co-tx-VjT" id="uuY-8e-UaO"/>
+                        <outlet property="playerWinnerLabel" destination="sfE-8B-mNB" id="stn-GX-ASI"/>
+                        <segue destination="635-id-SYy" kind="unwind" identifier="unwinToHomeController" unwindAction="prepareForUnwindWithSegue:" id="J2K-XG-YZG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HHF-km-f9W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="635-id-SYy" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2788" y="131"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="crowned" width="137" height="137"/>
         <image name="gun" width="128" height="128"/>
+        <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="knight" width="137" height="137"/>
         <image name="life" width="137" height="137"/>
         <image name="logo" width="167" height="167"/>
