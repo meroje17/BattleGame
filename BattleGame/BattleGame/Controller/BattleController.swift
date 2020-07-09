@@ -38,83 +38,40 @@ final class BattleController: UIViewController {
     @IBOutlet private weak var attackOrHealButtonsStackView: UIStackView!
     
     private var turn: Int!
-    private var attacker: Character!
+    private var fighter: Character!
     private var actionInterruptor = false
     private var choosenAction: actionPossible!
-    private var characterCanHeal = false
     private var nameOfVictoryPlayer: String!
     private var chest: Chest = Chest()
     
-    @IBAction private func tapCharacterOneButton() {
+    @IBAction func tapCharacterButton(_ sender: UIButton) {
         if actionInterruptor {
             switch choosenAction {
             case .attack:
-                fight(with: attacker, andTarget: 0)
+                fight(with: fighter, andTarget: sender.tag)
             case .heal:
-                heal(with: attacker, andTarget: 0)
+                heal(with: fighter, andTarget: sender.tag)
             default:
                 return
             }
         } else {
-            attacker = Player.list[turn % 2].characters[0]
-            if attacker.heal { characterCanHeal = true } else { characterCanHeal = false }
+            fighter = Player.list[turn % 2].characters[sender.tag]
             updatePlayerTurnLabel(withAction: .chooseAction)
-            hideActionStackView(false)
+            presentAction(true)
         }
     }
     
-    @IBAction private func tapCharacterTwoButton() {
-        if actionInterruptor {
-            switch choosenAction {
-            case .attack:
-                fight(with: attacker, andTarget: 1)
-            case .heal:
-                heal(with: attacker, andTarget: 1)
-            default:
-                return
-            }
-        } else {
-            attacker = Player.list[turn % 2].characters[1]
-            if attacker.heal { characterCanHeal = true } else { characterCanHeal = false }
-            updatePlayerTurnLabel(withAction: .chooseAction)
-            hideActionStackView(false)
-        }
-    }
-    
-    @IBAction private func tapCharacterThreeButton() {
-        if actionInterruptor {
-            switch choosenAction {
-            case .attack:
-                fight(with: attacker, andTarget: 2)
-            case .heal:
-                heal(with: attacker, andTarget: 2)
-            default:
-                return
-            }
-        } else {
-            attacker = Player.list[turn % 2].characters[2]
-            if attacker.heal { characterCanHeal = true } else { characterCanHeal = false }
-            updatePlayerTurnLabel(withAction: .chooseAction)
-            hideActionStackView(false)
-        }
-    }
-    
-    @IBAction private func tapAttackButton() {
+    @IBAction func tapActionButton(_ sender: UIButton) {
         actionInterruptor = true
-        choosenAction = .attack
+        if sender.tag == 0 { choosenAction = .attack } else { choosenAction = .heal }
         updatePlayerTurnLabel(withAction: .chooseTarget)
-        hideActionStackView(true)
-    }
-    
-    @IBAction private func tapHealButton() {
-        actionInterruptor = true
-        choosenAction = .heal
-        updatePlayerTurnLabel(withAction: .chooseTarget)
-        hideActionStackView(true)
+        presentAction(false)
     }
     
     @IBAction func tapChestButton() {
         chestView.isHidden = true
+        charactersButtonStackView.isUserInteractionEnabled = true
+        attackOrHealButtonsStackView.isUserInteractionEnabled = true
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -125,35 +82,36 @@ final class BattleController: UIViewController {
     }
     
     private func fight(with attacker: Character, andTarget number: Int) {
-        let indexPlayer = (turn + 1) % 2
-        Player.list[indexPlayer].characters[number].lifePoint -= attacker.weapon.damagePoint
+        let indexOpponentPlayer = (turn + 1) % 2
+        var character = Player.list[indexOpponentPlayer].characters[number]
+        character.lifePoint = attacker.attack(target: character)
         if endOfBattleVerification() {
             performSegue(withIdentifier: "endOfBattle", sender: nil)
             return
         }
-        if Player.list[indexPlayer].characters[number].lifePoint <= 0 {
-            if indexPlayer == 0 {
+        if character.lifePoint <= 0 {
+            if indexOpponentPlayer == 0 {
                 charactersImageView[number].image = UIImage(named: "dead")
             } else {
                 charactersImageView[number + 3].image = UIImage(named: "dead")
             }
         }
-        refreshCharactersLifePointsLabel()
-        actionInterruptor = false
-        turn += 1
-        isTheChestOpen()
-        updatePlayerTurnLabel(withAction: .chooseAttacker)
-        hideActionStackView(true)
+        nextTurn()
     }
     
     private func heal(with healer: Character, andTarget number: Int) {
-        Player.list[turn % 2].characters[number].lifePoint += healer.weapon.healPoint
-        refreshCharactersLifePointsLabel()
+        var character = Player.list[turn % 2].characters[number]
+        character.lifePoint = healer.heal(target: character)
+        nextTurn()
+    }
+    
+    private func nextTurn() {
+        updateLifePoints()
         actionInterruptor = false
         turn += 1
         isTheChestOpen()
         updatePlayerTurnLabel(withAction: .chooseAttacker)
-        hideActionStackView(true)
+        presentAction(false)
     }
     
     private func endOfBattleVerification() -> Bool {
@@ -171,86 +129,72 @@ final class BattleController: UIViewController {
         }
     }
     
-    private func hideActionStackView(_ bool: Bool) {
-        var index = 0
-        if characterCanHeal { healButton.isHidden = false } else { healButton.isHidden = true }
-        if attacker.weapon.damagePoint <= 0 { attackButton.isHidden = true } else { attackButton.isHidden = false }
-        if (actionInterruptor == true) && (choosenAction == .attack) {
-            for character in Player.list[(turn + 1) % 2].characters {
-                if character.lifePoint <= 0 { charactersButton[index].isHidden = true } else { charactersButton[index].isHidden = false }
-                index += 1
-            }
+    private func presentAction(_ bool: Bool) {
+        if bool == true {
+            hideActionStackView(!bool)
+            if fighter.canHeal { healButton.isHidden = false } else { healButton.isHidden = true }
+            if fighter.canAttack { attackButton.isHidden = false } else { attackButton.isHidden = true }
         } else {
-            for character in Player.list[turn % 2].characters {
-                if character.lifePoint <= 0 { charactersButton[index].isHidden = true } else { charactersButton[index].isHidden = false }
-                index += 1
+            var index = 0
+            if (actionInterruptor == true) && (choosenAction == .attack) {
+                for character in Player.list[(turn + 1) % 2].characters {
+                    if character.lifePoint <= 0 { charactersButton[index].isHidden = true } else { charactersButton[index].isHidden = false }
+                    index += 1
+                }
+            } else {
+                for character in Player.list[turn % 2].characters {
+                    if character.lifePoint <= 0 { charactersButton[index].isHidden = true } else { charactersButton[index].isHidden = false }
+                    index += 1
+                }
             }
+            hideActionStackView(!bool)
         }
+    }
+    
+    private func hideActionStackView(_ bool: Bool) {
         attackOrHealButtonsStackView.isHidden = bool
         charactersButtonStackView.isHidden = !bool
     }
     
     private func isTheChestOpen() {
-        guard let weapon = chest.openToGetWeapon() else { return }
-        assignateRandomWeapon(weapon)
+        chest.randomTurn = chest.haveRandomTurn()
+        guard let weapon = chest.isTheChestOpen() else { return }
+        chest.assignate(weapon)
+        presentChestView()
     }
     
-    private func assignateRandomWeapon(_ weapon: Weapon) {
-        let playerIndexRandom = Int.random(in: 0...1)
-        let characterIndexRandom = Int.random(in: 0...2)
-        if Player.list[playerIndexRandom].characters[characterIndexRandom].lifePoint <= 0 {
-            assignateRandomWeapon(weapon)
-        } else {
-            Player.list[playerIndexRandom].characters[characterIndexRandom].weapon = weapon
-            chestView.isHidden = false
-            weaponImageView.image = UIImage(named: "\(weapon.nameOfWeapon)")
-            chestLabel.text = "\(Player.list[playerIndexRandom].characters[characterIndexRandom].name) of \(Player.list[playerIndexRandom].name) find a \(weapon.nameOfWeapon) (\(weapon.damagePoint) damage, \(weapon.healPoint) heal)."
-        }
+    private func presentChestView() {
+        chestView.isHidden = false
+        weaponImageView.image = UIImage(named: Player.list[chest.randomPlayer].characters[chest.randomCharacter].weapon.name)
+        let player = Player.list[chest.randomPlayer]
+        let character = player.characters[chest.randomCharacter]
+        let weapon = character.weapon
+        chestLabel.text = "\(character.name) of \(player.name) find a \(weapon.name) (\(weapon.damagePoint) damage, \(weapon.healPoint) heal)."
+        charactersButtonStackView.isUserInteractionEnabled = false
+        attackOrHealButtonsStackView.isUserInteractionEnabled = false
     }
     
-    private func initNamesOfPlayer() {
-        var index = 0
-        for label in namesOfPlayer {
-            label.text = Player.list[index].name
-            index += 1
-        }
-    }
-    
-    private func initCharactersImageView() {
-        var index = 0
-        for imageView in charactersImageView {
+    private func initUI() {
+        for index in 0...5 {
             if index <= 2 {
-                imageView.image = UIImage(named: Player.list[0].characters[index].image)
-                index += 1
+                if index < 2 {
+                    namesOfPlayer[index].text = Player.list[index].name
+                }
+                charactersNamesLabel[index].text = Player.list[0].characters[index].name
+                charactersImageView[index].image = UIImage(named: Player.list[0].characters[index].image)
             } else {
-                imageView.image = UIImage(named: Player.list[1].characters[index - 3].image)
-                index += 1
+                charactersNamesLabel[index].text = Player.list[1].characters[index - 3].name
+                charactersImageView[index].image = UIImage(named: Player.list[1].characters[index - 3].image)
             }
         }
     }
     
-    private func initCharactersNamesLabel() {
-        var index = 0
-        for label in charactersNamesLabel {
+    private func updateLifePoints() {
+        for index in 0...5 {
             if index <= 2 {
-                label.text = Player.list[0].characters[index].name
-                index += 1
+                charactersLifePointsLabel[index].text = String(Player.list[0].characters[index].lifePoint)
             } else {
-                label.text = Player.list[1].characters[index - 3].name
-                index += 1
-            }
-        }
-    }
-    
-    private func refreshCharactersLifePointsLabel() {
-        var index = 0
-        for label in charactersLifePointsLabel {
-            if index <= 2 {
-                label.text = String(Player.list[0].characters[index].lifePoint)
-                index += 1
-            } else {
-                label.text = String(Player.list[1].characters[index - 3].lifePoint)
-                index += 1
+                charactersLifePointsLabel[index].text = String(Player.list[1].characters[index - 3].lifePoint)
             }
         }
     }
@@ -259,14 +203,7 @@ final class BattleController: UIViewController {
         playerTurnLabel.text = "\(Player.list[turn % 2].name) it's your turn, \(action.rawValue)"
     }
     
-    private func initializer() {
-        turn = Int.random(in: 0...1)
-        
-        initNamesOfPlayer()
-        initCharactersImageView()
-        initCharactersNamesLabel()
-        refreshCharactersLifePointsLabel()
-        
+    private func roundedViewAndButton() {
         chestButton.layer.cornerRadius = chestButton.bounds.height / 2
         chestView.layer.cornerRadius = 10
         for button in charactersButton {
@@ -274,7 +211,13 @@ final class BattleController: UIViewController {
         }
         attackButton.layer.cornerRadius = 10
         healButton.layer.cornerRadius = 10
-        
+    }
+    
+    private func initializer() {
+        turn = Int.random(in: 0...1)
+        initUI()
+        updateLifePoints()
+        roundedViewAndButton()
         attackOrHealButtonsStackView.isHidden = true
         updatePlayerTurnLabel(withAction: .chooseAttacker)
     }

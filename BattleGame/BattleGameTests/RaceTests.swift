@@ -14,9 +14,10 @@ class RaceTests: XCTestCase {
         let ork = Ork("ORKI")
         ork.weapon = Weapon.list[0]
         XCTAssertTrue(ork.name == "ORKI")
-        XCTAssertTrue(ork.heal == false)
+        XCTAssertTrue(ork.canHeal == false)
+        XCTAssertTrue(ork.canAttack == true)
         XCTAssertTrue(ork.lifePoint == 15)
-        XCTAssertTrue(ork.weapon.nameOfWeapon == "mace")
+        XCTAssertTrue(ork.weapon.name == "mace")
         XCTAssertTrue(ork.weapon.healPoint == 0)
         XCTAssertTrue(ork.weapon.damagePoint == 1)
     }
@@ -25,9 +26,10 @@ class RaceTests: XCTestCase {
         let knight = Knight("KNOCKI")
         knight.weapon = Weapon.list[1]
         XCTAssertTrue(knight.name == "KNOCKI")
-        XCTAssertTrue(knight.heal == false)
+        XCTAssertTrue(knight.canHeal == false)
+        XCTAssertTrue(knight.canAttack == true)
         XCTAssertTrue(knight.lifePoint == 10)
-        XCTAssertTrue(knight.weapon.nameOfWeapon == "sword")
+        XCTAssertTrue(knight.weapon.name == "sword")
         XCTAssertTrue(knight.weapon.healPoint == 0)
         XCTAssertTrue(knight.weapon.damagePoint == 2)
     }
@@ -36,9 +38,10 @@ class RaceTests: XCTestCase {
         let wizard = Wizard("WIZZI")
         wizard.weapon = Weapon.list[2]
         XCTAssertTrue(wizard.name == "WIZZI")
-        XCTAssertTrue(wizard.heal == true)
+        XCTAssertTrue(wizard.canHeal == true)
+        XCTAssertTrue(wizard.canAttack == false)
         XCTAssertTrue(wizard.lifePoint == 12)
-        XCTAssertTrue(wizard.weapon.nameOfWeapon == "rod")
+        XCTAssertTrue(wizard.weapon.name == "rod")
         XCTAssertTrue(wizard.weapon.healPoint == 1)
         XCTAssertTrue(wizard.weapon.damagePoint == 0)
     }

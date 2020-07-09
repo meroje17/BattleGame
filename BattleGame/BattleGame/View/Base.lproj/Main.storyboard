@@ -668,10 +668,10 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="tapAttackButton" destination="vgM-ct-Euv" eventType="touchUpInside" id="Zy6-td-vUh"/>
+                                            <action selector="tapActionButton:" destination="vgM-ct-Euv" eventType="touchUpInside" id="yEJ-Gv-KqR"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PEO-AG-haV">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PEO-AG-haV">
                                         <rect key="frame" x="145" y="0.0" width="135" height="55"/>
                                         <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="20"/>
@@ -679,7 +679,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="tapHealButton" destination="vgM-ct-Euv" eventType="touchUpInside" id="UNx-ie-3th"/>
+                                            <action selector="tapActionButton:" destination="vgM-ct-Euv" eventType="touchUpInside" id="YF6-L3-0yp"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -698,10 +698,10 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="tapCharacterOneButton" destination="vgM-ct-Euv" eventType="touchUpInside" id="Pri-qD-uMk"/>
+                                            <action selector="tapCharacterButton:" destination="vgM-ct-Euv" eventType="touchUpInside" id="Imc-fP-yge"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t3i-EP-cFg">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t3i-EP-cFg">
                                         <rect key="frame" x="96.5" y="0.0" width="87" height="55"/>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.63495785000000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="14"/>
@@ -709,10 +709,10 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="tapCharacterTwoButton" destination="vgM-ct-Euv" eventType="touchUpInside" id="aQQ-Gi-YMi"/>
+                                            <action selector="tapCharacterButton:" destination="vgM-ct-Euv" eventType="touchUpInside" id="otJ-eU-ESl"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mRn-xm-Jpr">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mRn-xm-Jpr">
                                         <rect key="frame" x="193.5" y="0.0" width="86.5" height="55"/>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.63495785000000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="14"/>
@@ -720,7 +720,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="tapCharacterThreeButton" destination="vgM-ct-Euv" eventType="touchUpInside" id="MnX-iL-2Un"/>
+                                            <action selector="tapCharacterButton:" destination="vgM-ct-Euv" eventType="touchUpInside" id="kEE-LM-7U0"/>
                                         </connections>
                                     </button>
                                 </subviews>

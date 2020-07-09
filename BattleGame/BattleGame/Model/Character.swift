@@ -12,7 +12,8 @@ protocol Character {
     var name: String { get set }
     var image: String { get set }
     var lifePoint: Int { get set }
-    var heal: Bool { get set }
+    var canHeal: Bool { get set }
+    var canAttack: Bool { get set }
     var weapon: Weapon { get set }
     func heal(target: Character) -> Int
     func attack(target: Character) -> Int

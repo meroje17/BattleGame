@@ -8,17 +8,12 @@
 
 import Foundation
 
-protocol Random {
-    var randomTurn: Int! { get set }
-    func openToGetWeapon() -> Weapon?
-    func randomInt() -> Int
-}
-
-final class Chest: Random {
+final class Chest {
     var randomTurn: Int!
+    var randomPlayer: Int!
+    var randomCharacter: Int!
     
-    func openToGetWeapon() -> Weapon? {
-        randomTurn = randomInt()
+    func isTheChestOpen() -> Weapon? {
         if randomTurn <= 2 {
             let randomWeapon = Weapon.list.randomElement()
             if let weapon = randomWeapon {
@@ -28,7 +23,25 @@ final class Chest: Random {
         return nil
     }
     
-    func randomInt() -> Int {
+    func assignate(_ weapon: Weapon) {
+        randomPlayer = haveRandomPlayer()
+        randomCharacter = haveRandomCharacter()
+        if Player.list[randomPlayer].characters[randomCharacter].lifePoint > 0 {
+            Player.list[randomPlayer].characters[randomCharacter].weapon = weapon
+        } else {
+            assignate(weapon)
+        }
+    }
+    
+    func haveRandomTurn() -> Int {
         return Int.random(in: 0...10)
+    }
+    
+    private func haveRandomPlayer() -> Int {
+        return Int.random(in: 0...1)
+    }
+    
+    private func haveRandomCharacter() -> Int {
+        return Int.random(in: 0...2)
     }
 }
