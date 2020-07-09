@@ -68,7 +68,7 @@ final class TeamCreaterController: UIViewController {
             case 2:
                 Player.list[playerIndex].characters.append(Wizard(namesTextField[index].text!))
             default:
-                return
+                Player.list[playerIndex].characters.append(Knight(namesTextField[index].text!))
             }
             index += 1
         }

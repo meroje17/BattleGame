@@ -653,6 +653,9 @@
                                         <state key="normal" title="ATTACK">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="tapAttackButton" destination="vgM-ct-Euv" eventType="touchUpInside" id="Zy6-td-vUh"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PEO-AG-haV">
                                         <rect key="frame" x="145" y="0.0" width="135" height="55"/>
@@ -661,69 +664,80 @@
                                         <state key="normal" title="HEAL">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="tapHealButton" destination="vgM-ct-Euv" eventType="touchUpInside" id="UNx-ie-3th"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="SVh-tv-CcY"/>
                                 </constraints>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="ALQ-9D-xBp">
-                                <rect key="frame" x="20" y="463" width="280" height="85"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="bHh-fV-GnZ">
+                                <rect key="frame" x="20" y="493" width="280" height="55"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player it's your turn" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hfi-5q-U5V">
-                                        <rect key="frame" x="0.0" y="0.0" width="280" height="25"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="25" id="c8M-UP-kJI"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="20"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="zm7-mS-cxi">
-                                        <rect key="frame" x="0.0" y="30" width="280" height="55"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u1C-0y-vMX">
-                                                <rect key="frame" x="0.0" y="0.0" width="86.5" height="55"/>
-                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.63495785000000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="12"/>
-                                                <state key="normal" title="Character1">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HnV-YW-3ba">
-                                                <rect key="frame" x="96.5" y="0.0" width="87" height="55"/>
-                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.63495785000000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="12"/>
-                                                <state key="normal" title="Character2">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wfo-Ad-aMT">
-                                                <rect key="frame" x="193.5" y="0.0" width="86.5" height="55"/>
-                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.63495785000000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="12"/>
-                                                <state key="normal" title="Character3">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BBI-yl-KA3">
+                                        <rect key="frame" x="0.0" y="0.0" width="86.5" height="55"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.63495785000000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="14"/>
+                                        <state key="normal" title="Character1">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="tapCharacterOneButton" destination="vgM-ct-Euv" eventType="touchUpInside" id="Pri-qD-uMk"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t3i-EP-cFg">
+                                        <rect key="frame" x="96.5" y="0.0" width="87" height="55"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.63495785000000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="14"/>
+                                        <state key="normal" title="Character2">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="tapCharacterTwoButton" destination="vgM-ct-Euv" eventType="touchUpInside" id="aQQ-Gi-YMi"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mRn-xm-Jpr">
+                                        <rect key="frame" x="193.5" y="0.0" width="86.5" height="55"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.63495785000000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="14"/>
+                                        <state key="normal" title="Character3">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="tapCharacterThreeButton" destination="vgM-ct-Euv" eventType="touchUpInside" id="MnX-iL-2Un"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="85" id="l7h-9E-5Q1"/>
+                                    <constraint firstAttribute="height" constant="55" id="UnB-XG-cNi"/>
                                 </constraints>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player it's your turn" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yMR-FL-J4N">
+                                <rect key="frame" x="20" y="453" width="280" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="UP5-GN-mmC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="16"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.49330145120000002" green="0.73698854449999995" blue="0.79622775320000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="yX4-3y-UJG" firstAttribute="leading" secondItem="Mdt-jI-21x" secondAttribute="leading" constant="20" id="1lf-f3-Bac"/>
                             <constraint firstItem="Nlk-FR-2vx" firstAttribute="top" secondItem="Mdt-jI-21x" secondAttribute="top" constant="10" id="50o-dc-omX"/>
                             <constraint firstItem="Mdt-jI-21x" firstAttribute="trailing" secondItem="OeY-7B-BnF" secondAttribute="trailing" id="6Bm-ni-Zo4"/>
+                            <constraint firstItem="Mdt-jI-21x" firstAttribute="bottom" secondItem="bHh-fV-GnZ" secondAttribute="bottom" constant="20" id="720-uY-qVz"/>
                             <constraint firstItem="K2v-m6-w12" firstAttribute="leading" secondItem="Mdt-jI-21x" secondAttribute="leading" constant="20" id="7gG-U3-DrC"/>
+                            <constraint firstItem="yMR-FL-J4N" firstAttribute="leading" secondItem="Mdt-jI-21x" secondAttribute="leading" constant="20" id="DPr-bo-DRI"/>
                             <constraint firstItem="Mdt-jI-21x" firstAttribute="trailing" secondItem="mKz-x8-ML0" secondAttribute="trailing" constant="20" id="GWX-QP-nNZ"/>
                             <constraint firstItem="Nlk-FR-2vx" firstAttribute="leading" secondItem="Mdt-jI-21x" secondAttribute="leading" constant="10" id="HGp-Np-8R9"/>
                             <constraint firstItem="Mmj-C1-2Yp" firstAttribute="centerX" secondItem="LqA-BL-AiF" secondAttribute="centerX" id="Idy-z7-ug9"/>
                             <constraint firstItem="m63-Eu-k2x" firstAttribute="top" secondItem="Nlk-FR-2vx" secondAttribute="bottom" constant="10" id="JtU-pD-h78"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="yMR-FL-J4N" secondAttribute="bottom" constant="90" id="MZK-uF-R4n"/>
+                            <constraint firstItem="bHh-fV-GnZ" firstAttribute="leading" secondItem="Mdt-jI-21x" secondAttribute="leading" constant="20" id="PFx-cd-cy6"/>
                             <constraint firstItem="mKz-x8-ML0" firstAttribute="centerY" secondItem="LqA-BL-AiF" secondAttribute="centerY" id="QNU-cp-5S4"/>
                             <constraint firstItem="Mdt-jI-21x" firstAttribute="bottom" secondItem="OeY-7B-BnF" secondAttribute="bottom" id="Tw7-AH-YpP"/>
                             <constraint firstItem="Mmj-C1-2Yp" firstAttribute="centerY" secondItem="LqA-BL-AiF" secondAttribute="centerY" id="XUs-cU-v7m"/>
@@ -734,15 +748,47 @@
                             <constraint firstItem="OeY-7B-BnF" firstAttribute="leading" secondItem="Mdt-jI-21x" secondAttribute="leading" id="lgG-8Q-tDb"/>
                             <constraint firstItem="yX4-3y-UJG" firstAttribute="top" secondItem="m63-Eu-k2x" secondAttribute="bottom" constant="10" id="lhi-Kf-c0a"/>
                             <constraint firstItem="m63-Eu-k2x" firstAttribute="leading" secondItem="Mdt-jI-21x" secondAttribute="leading" constant="10" id="nYX-zP-ULB"/>
-                            <constraint firstItem="Mdt-jI-21x" firstAttribute="bottom" secondItem="ALQ-9D-xBp" secondAttribute="bottom" constant="20" id="rYj-cu-4XC"/>
+                            <constraint firstItem="Mdt-jI-21x" firstAttribute="trailing" secondItem="yMR-FL-J4N" secondAttribute="trailing" constant="20" id="oz9-CE-U72"/>
+                            <constraint firstItem="Mdt-jI-21x" firstAttribute="trailing" secondItem="bHh-fV-GnZ" secondAttribute="trailing" constant="20" id="s7f-cV-ES3"/>
                             <constraint firstItem="Mdt-jI-21x" firstAttribute="trailing" secondItem="m63-Eu-k2x" secondAttribute="trailing" constant="10" id="uGY-MW-Eyk"/>
                             <constraint firstItem="Mdt-jI-21x" firstAttribute="trailing" secondItem="K2v-m6-w12" secondAttribute="trailing" constant="20" id="vLd-Hu-p1E"/>
-                            <constraint firstItem="ALQ-9D-xBp" firstAttribute="leading" secondItem="Mdt-jI-21x" secondAttribute="leading" constant="20" id="wop-ns-0n2"/>
-                            <constraint firstItem="Mdt-jI-21x" firstAttribute="trailing" secondItem="ALQ-9D-xBp" secondAttribute="trailing" constant="20" id="yVE-Hp-2wH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Mdt-jI-21x"/>
                     </view>
                     <navigationItem key="navigationItem" id="iyC-Dv-chw"/>
+                    <connections>
+                        <outlet property="attackButton" destination="xoX-ab-hYN" id="abn-w4-pa4"/>
+                        <outlet property="attackOrHealButtonsStackView" destination="K2v-m6-w12" id="4Xc-D1-5uB"/>
+                        <outlet property="charactersButtonStackView" destination="bHh-fV-GnZ" id="di9-tE-bQT"/>
+                        <outlet property="chestLabel" destination="RcQ-iu-bag" id="NIg-c6-1jz"/>
+                        <outlet property="chestView" destination="Mmj-C1-2Yp" id="Gpw-EW-HvP"/>
+                        <outlet property="gunImageView" destination="Gl4-M3-0Ah" id="1Qr-6B-YnZ"/>
+                        <outlet property="healButton" destination="PEO-AG-haV" id="qec-bX-1mM"/>
+                        <outlet property="playerTurnLabel" destination="yMR-FL-J4N" id="mKm-r0-jGw"/>
+                        <outletCollection property="namesOfPlayer" destination="dZZ-Ej-QuH" collectionClass="NSMutableArray" id="10k-PD-y1n"/>
+                        <outletCollection property="namesOfPlayer" destination="6rJ-jS-C7y" collectionClass="NSMutableArray" id="dmN-ca-cKM"/>
+                        <outletCollection property="charactersImageView" destination="VQK-Zl-TIN" collectionClass="NSMutableArray" id="Pdp-nI-5oT"/>
+                        <outletCollection property="charactersImageView" destination="OW4-wM-QLz" collectionClass="NSMutableArray" id="8Ex-Sv-A35"/>
+                        <outletCollection property="charactersImageView" destination="LZ2-nx-zUY" collectionClass="NSMutableArray" id="HWx-N9-aBb"/>
+                        <outletCollection property="charactersImageView" destination="EXj-Wo-81M" collectionClass="NSMutableArray" id="lRb-Ai-s84"/>
+                        <outletCollection property="charactersImageView" destination="VG0-I6-rHk" collectionClass="NSMutableArray" id="aik-2M-DDp"/>
+                        <outletCollection property="charactersImageView" destination="eoR-UN-zQX" collectionClass="NSMutableArray" id="2RN-UM-tWM"/>
+                        <outletCollection property="charactersNamesLabel" destination="2uJ-PR-toV" collectionClass="NSMutableArray" id="qMk-kG-dxY"/>
+                        <outletCollection property="charactersNamesLabel" destination="O2z-l7-LI9" collectionClass="NSMutableArray" id="ifK-Fq-JRB"/>
+                        <outletCollection property="charactersNamesLabel" destination="4dh-22-jzN" collectionClass="NSMutableArray" id="v6L-a2-Y2O"/>
+                        <outletCollection property="charactersNamesLabel" destination="ltw-wq-fh8" collectionClass="NSMutableArray" id="sf9-4e-bLC"/>
+                        <outletCollection property="charactersNamesLabel" destination="n6q-TZ-BCQ" collectionClass="NSMutableArray" id="cs1-1Q-9oK"/>
+                        <outletCollection property="charactersNamesLabel" destination="mvq-on-Ytx" collectionClass="NSMutableArray" id="Shb-gv-qOa"/>
+                        <outletCollection property="charactersButton" destination="BBI-yl-KA3" collectionClass="NSMutableArray" id="oKA-Fd-1cS"/>
+                        <outletCollection property="charactersButton" destination="t3i-EP-cFg" collectionClass="NSMutableArray" id="Cwp-De-TwA"/>
+                        <outletCollection property="charactersButton" destination="mRn-xm-Jpr" collectionClass="NSMutableArray" id="ztP-WU-xu5"/>
+                        <outletCollection property="charactersLifePointsLabel" destination="WDf-Bu-WNS" collectionClass="NSMutableArray" id="yxv-Ck-pjU"/>
+                        <outletCollection property="charactersLifePointsLabel" destination="2tD-b7-WBr" collectionClass="NSMutableArray" id="znp-Sh-IbJ"/>
+                        <outletCollection property="charactersLifePointsLabel" destination="F9d-Hg-WCU" collectionClass="NSMutableArray" id="2gg-rG-2mA"/>
+                        <outletCollection property="charactersLifePointsLabel" destination="Z1P-lg-kgA" collectionClass="NSMutableArray" id="pC7-m7-4l4"/>
+                        <outletCollection property="charactersLifePointsLabel" destination="tri-It-1HK" collectionClass="NSMutableArray" id="MV3-0k-Zr0"/>
+                        <outletCollection property="charactersLifePointsLabel" destination="65h-Te-xYU" collectionClass="NSMutableArray" id="K3g-RE-Ins"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eDH-lD-SaH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
