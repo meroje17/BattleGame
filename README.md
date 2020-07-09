@@ -1,5 +1,8 @@
 # BattleGame
 
+<p align="center"><img src="https://zupimages.net/up/20/28/hplw.png" data-canonical-src="https://zupimages.net/up/20/28/hplw.png" width="175" height="350" /></p> 
+
+
 ### Support
 
 BattleGame is a iOS Application with Swift language. Supporting : iOS 13.x and above, device orientation only portrait.
@@ -13,14 +16,13 @@ I've created this application to learn object programmating notion. It's a game 
 * Create two players profil | <a href="https://zupimages.net/up/20/28/7na2.png">Photo link</a>
 * Explaination of different races of characters | <a href="https://zupimages.net/up/20/28/uwzp.png">Photo link</a>
 * Team creater for each player | <a href="https://zupimages.net/up/20/28/hplw.png">Photo link</a>
-* Battle start | <a href="https://zupimages.net/up/20/28/tkzr.png">Photo link</a>
+* Battle start (with different actions possible)| <a href="https://zupimages.net/up/20/28/tkzr.png">Photo link</a>
+  * Choose your attacker/healer | <a href="https://zupimages.net/up/20/28/nt3t.png">Photo link</a>
+  * Choose your action (attack or heal) | <a href="https://zupimages.net/up/20/28/9hh6.png">Attack</a> or <a href="https://zupimages.net/up/20/28/6sq8.png">Heal</a>
+  * Choose your target | <a href="https://zupimages.net/up/20/28/9z66.png">Photo link</a>
 * Random weapon assignation | <a href="https://zupimages.net/up/20/28/jhmn.png">Photo link</a>
 * End of battle | <a href="https://zupimages.net/up/20/28/ktbp.png">Photo link</a>
 
-Different actions are possible :
-* Choose your attacker/healer | <a href="https://zupimages.net/up/20/28/nt3t.png">Photo link</a>
-* Choose your action (attack or heal) | <a href="https://zupimages.net/up/20/28/9hh6.png">Attack</a> or <a href="https://zupimages.net/up/20/28/6sq8.png">Heal</a>
-* Choose your target | <a href="https://zupimages.net/up/20/28/9z66.png">Photo link</a>
 
 ## Installation
 
