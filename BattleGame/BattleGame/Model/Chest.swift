@@ -17,7 +17,8 @@ protocol Random {
 final class Chest: Random {
     var randomTurn: Int!
     
-    func openToGetWeapon() -> Weapon? {        
+    func openToGetWeapon() -> Weapon? {
+        randomTurn = randomInt()
         if randomTurn <= 2 {
             let randomWeapon = Weapon.list.randomElement()
             if let weapon = randomWeapon {

@@ -192,12 +192,20 @@ final class BattleController: UIViewController {
     
     private func isTheChestOpen() {
         guard let weapon = chest.openToGetWeapon() else { return }
+        assignateRandomWeapon(weapon)
+    }
+    
+    private func assignateRandomWeapon(_ weapon: Weapon) {
         let playerIndexRandom = Int.random(in: 0...1)
         let characterIndexRandom = Int.random(in: 0...2)
-        Player.list[playerIndexRandom].characters[characterIndexRandom].weapon = weapon
-        chestView.isHidden = false
-        weaponImageView.image = UIImage(named: "\(weapon.nameOfWeapon)")
-        chestLabel.text = "\(Player.list[playerIndexRandom].characters[characterIndexRandom].name) of \(Player.list[playerIndexRandom].name) find a \(weapon.nameOfWeapon) (\(weapon.damagePoint) damage, \(weapon.healPoint) heal)."
+        if Player.list[playerIndexRandom].characters[characterIndexRandom].lifePoint <= 0 {
+            assignateRandomWeapon(weapon)
+        } else {
+            Player.list[playerIndexRandom].characters[characterIndexRandom].weapon = weapon
+            chestView.isHidden = false
+            weaponImageView.image = UIImage(named: "\(weapon.nameOfWeapon)")
+            chestLabel.text = "\(Player.list[playerIndexRandom].characters[characterIndexRandom].name) of \(Player.list[playerIndexRandom].name) find a \(weapon.nameOfWeapon) (\(weapon.damagePoint) damage, \(weapon.healPoint) heal)."
+        }
     }
     
     private func initNamesOfPlayer() {
