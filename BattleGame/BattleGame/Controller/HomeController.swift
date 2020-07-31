@@ -10,11 +10,17 @@ import UIKit
 
 final class HomeController: UIViewController {
 
+    // MARK: - Outlets
+    
     @IBOutlet private weak var nameFirstPlayerTextField: UITextField!
     @IBOutlet private weak var nameSecondPlayerTextField: UITextField!
     @IBOutlet private weak var goButton: UIButton!
     
+    // MARK: - Type alias
+    
     typealias completion = () -> ()
+    
+    // MARK: - User actions
     
     @IBAction private func tapGoButton() {
         emptyTextVerification {
@@ -22,10 +28,17 @@ final class HomeController: UIViewController {
         }
     }
     
-    @objc func textFielReturning() {
+    @objc private func textFielReturning() {
         nameFirstPlayerTextField.resignFirstResponder()
         nameSecondPlayerTextField.resignFirstResponder()
     }
+    
+    @IBAction func prepareForUnwind(segue: UIStoryboardSegue) {
+        nameFirstPlayerTextField.text = nil
+        nameSecondPlayerTextField.text = nil
+    }
+    
+    // MARK: - Private methods
     
     private func initializer() {
         goButton.layer.cornerRadius = goButton.bounds.height / 2
@@ -34,11 +47,6 @@ final class HomeController: UIViewController {
         nameSecondPlayerTextField.delegate = self
         
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(textFielReturning)))
-    }
-    
-    @IBAction func prepareForUnwind(segue: UIStoryboardSegue) {
-        nameFirstPlayerTextField.text = nil
-        nameSecondPlayerTextField.text = nil
     }
     
     private func emptyTextVerification(_ completion: completion) {
@@ -57,6 +65,8 @@ final class HomeController: UIViewController {
         initializer()
     }
 }
+
+// MARK: - Extension for react with user action
 
 extension HomeController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

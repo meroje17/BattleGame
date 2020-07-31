@@ -20,6 +20,8 @@ enum actionPossible {
 
 final class BattleController: UIViewController {
 
+    // MARK: - Outlets
+    
     @IBOutlet private var namesOfPlayer: [UILabel]!
     @IBOutlet private var charactersImageView: [UIImageView]!
     @IBOutlet private var charactersNamesLabel: [UILabel]!
@@ -37,12 +39,16 @@ final class BattleController: UIViewController {
     @IBOutlet private weak var charactersButtonStackView: UIStackView!
     @IBOutlet private weak var attackOrHealButtonsStackView: UIStackView!
     
+    // MARK: - Properties
+    
     private var turn: Int!
     private var fighter: Character!
     private var actionInterruptor = false
     private var choosenAction: actionPossible!
     private var nameOfVictoryPlayer: String!
     private var chest: Chest = Chest()
+    
+    // MARK: - Actions
     
     @IBAction func tapCharacterButton(_ sender: UIButton) {
         if actionInterruptor {
@@ -73,6 +79,8 @@ final class BattleController: UIViewController {
         charactersButtonStackView.isUserInteractionEnabled = true
         attackOrHealButtonsStackView.isUserInteractionEnabled = true
     }
+    
+    // MARK: - Private methods
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "endOfBattle" {
@@ -221,6 +229,8 @@ final class BattleController: UIViewController {
         attackOrHealButtonsStackView.isHidden = true
         updatePlayerTurnLabel(withAction: .chooseAttacker)
     }
+    
+    // MARK: - Initializer
     
     override func viewDidLoad() {
         super.viewDidLoad()

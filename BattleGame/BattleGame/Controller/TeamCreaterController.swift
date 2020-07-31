@@ -10,13 +10,19 @@ import UIKit
 
 final class TeamCreaterController: UIViewController {
 
+    // MARK: - Outlets
+    
     @IBOutlet private weak var chooseYourTeamLabel: UILabel!
     @IBOutlet private var namesTextField: [UITextField]!
     @IBOutlet private var racesSegmentedControl: [UISegmentedControl]!
     @IBOutlet private weak var launchBattleButton: UIButton!
     
+    // MARK: - Properties
+    
     typealias completion = () -> ()
     private var playerIndex = 0
+    
+    // MARK: - User actions
     
     @IBAction private func tapLaunchBattleButton() {
         if emptyTextVerification() {
@@ -37,6 +43,8 @@ final class TeamCreaterController: UIViewController {
             name.resignFirstResponder()
         }
     }
+    
+    // MARK: - Private methods
     
     private func initializer() {
         launchBattleButton.layer.cornerRadius = launchBattleButton.bounds.height / 2
@@ -84,12 +92,16 @@ final class TeamCreaterController: UIViewController {
         }
     }
     
+    // MARK: - Initializer
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         initializer()
     }
 }
+
+// MARK: - Extension for react with user action
 
 extension TeamCreaterController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

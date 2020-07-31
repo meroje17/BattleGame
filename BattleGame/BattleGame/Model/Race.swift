@@ -9,6 +9,9 @@
 import Foundation
 
 final class Ork: Character {
+    
+    // MARK: - Properties
+    
     var name: String
     var lifePoint = 15
     var canHeal = false
@@ -21,12 +24,17 @@ final class Ork: Character {
         }
     }
     
+    // MARK: - Initializer
+    
     init(_ name: String) {
         self.name = name
     }
 }
 
 final class Knight: Character {
+    
+    // MARK: - Properties
+    
     var name: String
     var lifePoint = 10
     var canHeal = false
@@ -39,12 +47,17 @@ final class Knight: Character {
         }
     }
     
+    // MARK: - Initializer
+    
     init(_ name: String) {
         self.name = name
     }
 }
 
 final class Wizard: Character {
+    
+    // MARK: - Properties
+    
     var name: String
     var lifePoint = 12
     var canHeal = true
@@ -56,6 +69,8 @@ final class Wizard: Character {
             if self.weapon.damagePoint > 0 { self.canAttack = true } else { self.canAttack = false }
         }
     }
+    
+    // MARK: - Initializer
     
     init(_ name: String) {
         self.name = name
