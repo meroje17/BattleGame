@@ -1,7 +1,15 @@
 # BattleGame
 
-<p align="center"><img src="https://zupimages.net/up/20/28/hplw.png" data-canonical-src="https://zupimages.net/up/20/28/hplw.png" width="175" height="350" /></p> 
 
+<p float="left">
+  <p align="middle">
+  <img src="https://zupimages.net/up/20/34/q4sc.png" data-canonical-src="https://zupimages.net/up/20/34/q4sc.png" width="190" height="350" />
+    &emsp;
+  <img src="https://zupimages.net/up/20/28/hplw.png" data-canonical-src="https://zupimages.net/up/20/28/hplw.png" width="190" height="350" /> 
+    &emsp;
+  <img src="https://zupimages.net/up/20/34/0faj.png" data-canonical-src="https://zupimages.net/up/20/34/0faj.png" width="190" height="350" />
+  </p>
+</p>
 
 ### Support
 
